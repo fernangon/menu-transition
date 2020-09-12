@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Animado</title>
+    <link rel="stylesheet" href="css/micss.css">
+
+</head>
+
+<body>
+
+    
+    <!-- Menu -->
+    <ul>
+
+        
+        <div id="marker"></div>
+
+        <li><a href="#">Games</a></li>
+        <li><a href="#">All Movies</a></li>
+        <li><a href="#">High Television</a></li>
+        <li><a href="#">Email</a></li>
+        <li><a href="#">Social Media</a></li>
+        <li><a href="#">Contact</a></li>
+        
+    </ul>
+
+
+
+    <script>
+
+        const marker = document.querySelector('#marker');
+        const item = document.querySelectorAll('ul li a');
+
+        function indicator(e) {
+            
+            marker.style.top = e.offsetTop + 'px';
+            
+            marker.style.width = e.offsetWidth + 'px';
+        }
+
+        // The forEach() method calls a function once for each element in an array, in order.
+        
+        item.forEach(link => {
+            link.addEventListener('mousemove', (e) => {
+                indicator(e.target);
+            });
+        }); 
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+
+</html>
+
